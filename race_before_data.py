@@ -23,7 +23,7 @@ def get_beforeinfo(date, place_cd, race_no):
     print(url)
     soup = BeautifulSoup(requests.get(url).text, 'lxml')
 
-    arr1 = arr1 = [[tag('td')[4].text, tag('td')[5].text]
+    arr1 = [[tag('td')[4].text, tag('td')[5].text]
                    for tag in soup(class_='is-fs12')]
     arr1 = [[v if v != '\xa0' else '' for v in row] for row in arr1]
     arr2 = [[tag.find(class_=f'table1_boatImage1{k}').text
