@@ -20,7 +20,6 @@ def get_url(date, place_cd, race_no, content):
 # 直前情報のサイトからHTMLを取得し解析する
 def get_beforeinfo(date, place_cd, race_no):
     url = get_url(date, place_cd, race_no, 'beforeinfo')
-    print(url)
     soup = BeautifulSoup(requests.get(url).text, 'lxml')
 
     arr1 = [[tag('td')[4].text, tag('td')[5].text]

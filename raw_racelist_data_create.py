@@ -15,9 +15,9 @@ for year_i in years:
             try:
 
                 date = f"{year_i}-{month_i}-{day_i}"
-                data_get.download_file('results', date)
-                df = data_get.get_results(date)
-                df.to_csv(f"outputs/{date}_result.csv", encoding='utf_8_sig')
+                data_get.download_file('racelists', date)
+                df = data_get.get_racelists(date)
+                df.to_csv(f"dataset/rawdata_syussouhyou/{date}_race_list.csv", encoding='utf_8_sig')
                 print(f"success {date}",flush=True)
 
             except:

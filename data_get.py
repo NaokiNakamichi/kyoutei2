@@ -121,7 +121,7 @@ def get_racelists(date):
                 continue
     if len(stack) > 0:
         df = pd.DataFrame(stack)[cols].dropna()
-        return df.astype(get_dtype('racelists'))
+        return df
     else:
         return None
 

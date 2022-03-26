@@ -17,7 +17,7 @@ for year_i in years:
                 date = f"{year_i}-{month_i}-{day_i}"
                 data_get.download_file('results', date)
                 df = data_get.get_results(date)
-                df.to_csv(f"outputs/{date}.csv", encoding='utf_8_sig')
+                df.to_csv(f"dataset/rawdata_result/{date}_result.csv", encoding='utf_8_sig')
                 print(f"success {date}",flush=True)
 
             except:
