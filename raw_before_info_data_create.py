@@ -6,8 +6,8 @@ import datetime
 import race_before_data
 
 
-years = [2020, 2022]
-months = [i for i in range(1,13)]
+years = [2022]
+months = [i for i in range(1,4)]
 days = [i for i in range(1,32)]
 race_no = [i for i in range(1,13)]
 place_cd = [i for i in range(1,25)]

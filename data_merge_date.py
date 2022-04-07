@@ -3,8 +3,8 @@ import pandas as pd
 
 import glob
 
-years = [2021]
-months = [i for i in range(1, 13)]
+years = [2022]
+months = [i for i in range(1, 4)]
 days = [i for i in range(1, 32)]
 
 before_files = glob.glob("dataset/rawdata_beforeinfo/*")
@@ -33,10 +33,13 @@ for year_i in years:
                                  and s.split("/")[2].split("_")[0].split("-")[2] == f"{day_i}")]
 
             for i, name in enumerate(before_name):
-                before_df = pd.read_csv(name, index_col=0)
-                race_info_df = pd.read_csv(race_info_name[i], index_col=0)
-                result_df = pd.read_csv(result_info_name[i], index_col=0)
-
-                tmp = pd.merge(race_info_df, before_df, on=["race_no", "place_cd"])
-                hoge = pd.merge(result_df, tmp, on=["race_no", "place_cd"])
-                hoge.to_csv(f"dataset/merge_data/{date}.csv", encoding='utf_8_sig')
+                try:
+                    before_df = pd.read_csv(name, index_col=0)
+                    race_info_df = pd.read_csv(race_info_name[i], index_col=0)
+                    result_df = pd.read_csv(result_info_name[i], index_col=0)
+                    tmp = pd.merge(race_info_df, before_df, on=["race_no", "place_cd"])
+                    hoge = pd.merge(result_df, tmp, on=["race_no", "place_cd"])
+                    print(hoge)
+                    hoge.to_csv(f"dataset/merge_data/{date}.csv", encoding='utf_8_sig')
+                except Exception as e:
+                    print(e, flush=True)

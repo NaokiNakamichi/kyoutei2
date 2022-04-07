@@ -12,7 +12,7 @@ usecols = [f'{k}_{i}' for k in ('class', 'glob_win', 'glob_in2',
             for i in range(1, 7)]
 usecols += [f'ET_{i}_y'
             for i in range(1, 7)]
-hoge = pd.read_csv("../dataset/all_data_2021.csv")
+hoge = pd.read_csv("../dataset/all_data_2021_2022_03.csv",index_col=0)
 
 tmp = hoge[usecols]
 
@@ -29,6 +29,7 @@ def rank_mapper(x):
 
 for i in range(1,7):
     col_name_class = f"class_{i}"
+    print(tmp.loc[:, col_name_class])
     tmp.loc[:, col_name_class] = tmp.loc[:, col_name_class].map(rank_mapper)
 class_col = [s for s in tmp.columns if "class" in s]
 def hensachi(x):

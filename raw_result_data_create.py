@@ -4,9 +4,9 @@ import time
 import race_before_data
 
 
-years = [2020,2021,2022]
-months = [i for i in range(1,13)]
-days = [i for i in range(1,32)]
+years = [2022]
+months = [i for i in range(3,4)]
+days = [i for i in range(14,15)]
 
 for year_i in years:
     for month_i in months:
@@ -20,5 +20,7 @@ for year_i in years:
                 df.to_csv(f"dataset/rawdata_result/{date}_result.csv", encoding='utf_8_sig')
                 print(f"success {date}",flush=True)
 
-            except:
-                print("error",flush=True)
+
+            except Exception as e:
+
+                print(e, flush=True)

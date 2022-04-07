@@ -13,5 +13,6 @@ df = pd.concat(datalist, axis=0)
 
 drop_list = [s for s in df.columns if "_x" in s]
 drop_df = df.drop(drop_list, axis=1)
-drop_df.to_csv("dataset/all_data_2021.csv", encoding='utf_8_sig')
+res_df = drop_df[drop_df.tkt_1t != '特払い']
+res_df.to_csv("dataset/all_data_2021_2022_03.csv", encoding='utf_8_sig')
 

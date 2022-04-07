@@ -4,8 +4,8 @@ import time
 import race_before_data
 
 
-years = [2020,2021,2022]
-months = [i for i in range(1,13)]
+years = [2022]
+months = [i for i in range(1,4)]
 days = [i for i in range(1,32)]
 
 for year_i in years:
