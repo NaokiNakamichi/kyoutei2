@@ -108,7 +108,7 @@ def ex(index, row):
     record.append(hoge[oddsinpred])
     umami = np.max(hoge * y_pred_prob)
     print(f"旨味係数：{umami}")
-    if umami > 2.0:
+    if umami > 5.0:
         print("購入!!!!!!!!")
         record.append(1)
     else:
@@ -120,7 +120,7 @@ def ex(index, row):
     all_record.append(flat)
 
 
-date = '2022-04-04'
+date = '2022-04-09'
 data_get.download_file('racelists', date)
 df_race = data_get.get_racelists(date)
 
